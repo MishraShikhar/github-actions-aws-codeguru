@@ -8,6 +8,7 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 @SpringBootApplication
 public class SpringBootHelloWorldExampleApplication  extends SpringBootServletInitializer
 {
+final String token = "shpss_sdkfhkjh134134141341344133412312345678";
 	@Override
 	
 	    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
