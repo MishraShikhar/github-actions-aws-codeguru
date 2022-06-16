@@ -13,6 +13,8 @@ public class Constants {
     
     private static String ACCESS_KEY = "";
     private static String SECERET_KEY = "";
+    private static String dburl="postgres://ojxarsxivjuyjc:ubKveYbvNjQ5a0CU8vK4YoVIhl@ec2-54-225-223-40.compute-1.amazonaws.com:5432/dcectn1pto16vi?ssl=true&sslfactory=org.postgresql.ssl.NonValidatingFactory";
+
     private static String dbport="3000";
     private static String dbusername="root";
     private static String dbpassword="sk_live_454kjkj4545FD3434Srere7878";
