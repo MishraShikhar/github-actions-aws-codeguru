@@ -13,7 +13,9 @@ public class Constants {
     
     private static String ACCESS_KEY = "";
     private static String SECERET_KEY = "";
-    public static final String PROD_CODE = "010";
+    private static String dbport="3000";
+    private static String dbusername="root";
+    private static String dbpassword="sk_live_454kjkj4545FD3434Srere7878";
     private static Constants Constants = null;
     static AWSCredentials aac;
     static AmazonDynamoDB ddb;
