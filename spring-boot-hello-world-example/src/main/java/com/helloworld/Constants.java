@@ -1,4 +1,6 @@
 package com.helloworld;
+import java.util.logging.Logger;
+
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSStaticCredentialsProvider;
 import com.amazonaws.auth.BasicAWSCredentials;
@@ -13,20 +15,25 @@ public class Constants {
     private static String SECERET_KEY = "";
     public static final String PROD_CODE = "010";
     private static Constants Constants = null;
-    static AWSCredentials ac;
-    static AmazonDynamoDB dynamodb;
+    static AWSCredentials aac;
+    static AmazonDynamoDB ddb;
     public synchronized static Constants getInstance() {
         if (Constants == null) {
             Constants = new Constants();
+            try {
+                aac = new BasicAWSCredentials(ACCESS_KEY, SECERET_KEY);
 
-            ac = new BasicAWSCredentials(ACCESS_KEY, SECERET_KEY);
-
-            dynamodb = AmazonDynamoDBClientBuilder
+                ddb= AmazonDynamoDBClientBuilder
                     .standard()
             .withRegion("us-west-2")
-            .withCredentials(new AWSStaticCredentialsProvider(ac) )
+            .withCredentials(new AWSStaticCredentialsProvider(aac) )
             .build();
             System.out.println("Repo instance created");
+            } catch (final Exception ex) {
+                System.out.println(ex.getMessage());
+                throw new RuntimeException("Hiding the exception");
+            }
+            
         }
         return Constants;
     }
